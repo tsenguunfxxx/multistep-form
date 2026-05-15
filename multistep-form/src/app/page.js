@@ -4,11 +4,18 @@ import Image from "next/image";
 import StepOne from "./conponents/StepOne";
 import StepTwo from "./conponents/StepTwo";
 import StepThree from "./conponents/StepThree";
+import { ChevronRight } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 
 function Home() {
   const [currentStep, setcurrentStep] = useState(0);
   const StepComponents = [StepOne, StepTwo, StepThree][currentStep];
   const handleOnclick = () => setcurrentStep(currentStep + 1);
+  const handleBackclick = () => setcurrentStep(currentStep - 1);
+  const [data, setData] = useState({});
+  const handleInputValue = () => {
+    setData;
+  };
 
   return (
     <div className="h-screen w-screen bg-[#F4F4F4] flex justify-center items-center">
@@ -32,19 +39,32 @@ function Home() {
           </div>
           {/* Form container */}
           <div className="w-[416] h-[228] flex flex-col gap-3 items-start">
-            {/* <StepOne /> */}
-            {/* <StepTwo /> */}
-            {/* <StepThree /> */}
             <StepComponents />
           </div>
         </div>
-        <button
-          onClick={handleOnclick}
-          className="flex py-2.5 px-3 justify-center items-center gap-1 rounded-md bg-[#121316] w-[416] h-[44] "
-          type="button"
-        >
-          <p className="text-white">Continue 1/3 </p>
-        </button>
+        <div className="flex gap-8 w-[416]">
+          {currentStep > 0 && (
+            <button
+              onClick={handleBackclick}
+              className="w-[128] h-[44]  items-center justify-center flex border border-solid py-[10px] px-3 rounded-md"
+            >
+              <p className="flex">
+                {" "}
+                <ChevronLeft />
+                Back
+              </p>
+            </button>
+          )}
+          <button
+            onClick={handleOnclick}
+            className="flex py-2.5 px-3 justify-center items-center gap-1 rounded-md bg-[#121316] w-[416] h-[44] "
+            type="button"
+          >
+            <p className="text-white flex">
+              Continue 1/3 <ChevronRight />
+            </p>
+          </button>
+        </div>
       </div>
     </div>
   );
