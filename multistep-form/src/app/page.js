@@ -30,6 +30,7 @@ function Home() {
               height={60}
               className="rounded-xl object-cover"
             />
+
             <h1 className="drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] text-[26px] text-black">
               Join Us! 😎
             </h1>
@@ -46,15 +47,16 @@ function Home() {
           {currentStep > 0 && (
             <button
               onClick={handleBackclick}
-              className="w-[128] h-[44]  items-center justify-center flex border border-solid py-[10px] px-3 rounded-md"
+              className="w-[128] h-[44]  items-center justify-center flex border border-solid py-[10px] px-3 rounded-md bg-black"
             >
-              <p className="flex">
+              <p className="flex bg-black">
                 {" "}
                 <ChevronLeft />
                 Back
               </p>
             </button>
           )}
+          ``
           <button
             onClick={handleOnclick}
             className="flex py-2.5 px-3 justify-center items-center gap-1 rounded-md bg-[#121316] w-[416] h-[44] "
@@ -70,3 +72,4 @@ function Home() {
   );
 }
 export default Home;
+``;

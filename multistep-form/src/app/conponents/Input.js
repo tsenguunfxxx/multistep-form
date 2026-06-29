@@ -11,7 +11,7 @@ const Input = (props, type) => {
         onChange={handleOnchange}
         type={props.type}
         placeholder="Placeholder"
-        className="flex p-3 items-center rounded-lg border-solid border-2  w-[416]"
+        className="flex p-3 items-center rounded-lg border-solid border-2  w-[416] text-black"
       />
     </div>
   );

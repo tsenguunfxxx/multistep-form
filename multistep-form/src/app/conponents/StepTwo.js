@@ -1,7 +1,7 @@
 import Input from "./Input";
 const StepTwo = () => {
   return (
-    <div>
+    <div className="text-black">
       <Input title="Email" type="Email" />
       <Input title="Phone number" />
       <Input title="Password" type="Password" />
